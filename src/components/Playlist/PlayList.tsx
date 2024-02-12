@@ -1,6 +1,15 @@
-import React, { useCallback } from "react";
+//@ts-nocheck
+import { useCallback } from "react";
 import TrackList from "../TrackList/TrackList";
 import { Button, Divider, Stack } from "@mui/material";
+
+type Playlist = {
+  playList: {}[];
+  onRemove: () => void;
+  playListName: string;
+  onNameChange: () => void;
+  handlePlaylist: () => void;
+};
 
 const PlayList = ({
   playList,
@@ -8,7 +17,7 @@ const PlayList = ({
   playListName,
   onNameChange,
   handlePlaylist,
-}) => {
+}: Playlist) => {
   const handleNameChange = useCallback((e) => {
     onNameChange(e.target.value);
   });

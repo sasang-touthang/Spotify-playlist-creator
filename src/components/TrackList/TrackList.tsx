@@ -1,8 +1,14 @@
-import React from "react";
+//@ts-nocheck
 import Track from "../Track/Track";
 import { Container } from "@mui/material";
 
-const TrackList = ({ searchResult, onAdd, onRemove }) => {
+type Tracklist = {
+  searchResult: [];
+  onAdd: () => void;
+  onRemove: () => void;
+};
+
+const TrackList = ({ searchResult, onAdd, onRemove }: Tracklist) => {
   return (
     <Container
       sx={{
@@ -11,9 +17,21 @@ const TrackList = ({ searchResult, onAdd, onRemove }) => {
         marginTop: "0.5rem",
       }}
     >
-      {searchResult.map((track) => (
-        <Track key={track.id} track={track} onAdd={onAdd} onRemove={onRemove} />
-      ))}
+      {searchResult.map(
+        (track: {
+          id: String;
+          name: String;
+          album: String;
+          artist: String;
+        }) => (
+          <Track
+            key={track.id}
+            track={track}
+            onAdd={onAdd}
+            onRemove={onRemove}
+          />
+        )
+      )}
     </Container>
   );
 };

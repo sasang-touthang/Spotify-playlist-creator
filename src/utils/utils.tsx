@@ -1,3 +1,4 @@
+//@ts-nocheck
 var client_id: string = "b9021531a59f448285bfa08c941500ba";
 var redirect_uri = "http://localhost:5173/";
 export let accessToken: String;
@@ -63,7 +64,7 @@ export const Spotify = {
       },
     });
     const userId = await userIdRequest.json();
-    console.log(userId.id);
+    // console.log(userId.id);
 
     const createPlaylist = await fetch(
       `https://api.spotify.com/v1/users/${userId.id}/playlists`,

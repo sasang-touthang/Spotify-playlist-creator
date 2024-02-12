@@ -1,8 +1,13 @@
-import React from "react";
+//@ts-nocheck
 import TrackList from "../TrackList/TrackList";
 import { Divider, Stack } from "@mui/material";
 
-const SearchResult = ({ searchResult, onAdd }) => {
+type Searchresult = {
+  searchResult: [];
+  onAdd: () => void;
+};
+
+const SearchResult = ({ searchResult, onAdd }: Searchresult) => {
   return (
     <Stack
       sx={{

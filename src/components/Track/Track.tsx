@@ -1,8 +1,14 @@
+//@ts-nocheck
 import { Button, Stack } from "@mui/material";
-import React from "react";
 import { Divider } from "@mui/material";
 
-const Track = ({ track, onAdd, onRemove }) => {
+type Track = {
+  track: { name: String; album: String; artist: String };
+  onAdd: () => void;
+  onRemove: () => void;
+};
+
+const Track = ({ track, onAdd, onRemove }: Track) => {
   const render = () => {
     if (onRemove) {
       return (

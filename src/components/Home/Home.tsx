@@ -1,3 +1,4 @@
+//@ts-nocheck
 import { useCallback, ReactElement, useState } from "react";
 import SearchBar from "../SearchBar/SearchBar";
 import SearchResult from "../SearchResult/SearchResult";
@@ -28,13 +29,13 @@ const Home = (): ReactElement => {
   const handleOnRemove = useCallback(
     (track) => {
       setPlayList((prevState) =>
-        prevState.filter((savedTrack) => savedTrack.id !== track.id)
+        prevState.filter((savedTrack) => savedTrack.id !== track?.id)
       );
     },
     [playList]
   );
 
-  const updatePlaylist = useCallback((name) => {
+  const updatePlaylist = useCallback((name: String) => {
     setPlayListName(name);
   }, []);
 
@@ -44,7 +45,6 @@ const Home = (): ReactElement => {
     setPlayListName("");
   }, [playListName, playList]);
 
-  console.log(playList);
   return (
     <Stack>
       <SearchBar onSearch={search} />

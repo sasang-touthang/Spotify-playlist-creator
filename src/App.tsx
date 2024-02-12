@@ -1,4 +1,3 @@
-import { useCallback } from "react";
 import "./App.css";
 import Authorization from "./components/Authorizaion/Authorization";
 import Home from "./components/Home/Home";
