@@ -1,6 +1,6 @@
 //@ts-nocheck
 var client_id: string = "b9021531a59f448285bfa08c941500ba";
-var redirect_uri = "http://localhost:5173/";
+var redirect_uri = "https://spotifyplaylistcreator.netlify.app";
 export let accessToken: String;
 
 export const Spotify = {
